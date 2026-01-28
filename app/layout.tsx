@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
-import AIAssistant from "@/components/AIAssistant";
 import { SOCIAL_LINKS } from "@/constants";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Amna Khalid | Portfolio",
-    description: "Portfolio and AI Assistant of Amna Khalid",
+    description: "Professional portfolio of Amna Khalid, showcasing engineering projects and skills.",
 };
 
 export default function RootLayout({
@@ -42,13 +41,12 @@ export default function RootLayout({
                                 <a href="https://rmt-usa.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">RMT USA</a>
                             </div>
                             <p className="text-sm text-slate-500">
-                                © {new Date().getFullYear()} Amna Khalid. Built with React, Tailwind & AI Assistant.
+                                © {new Date().getFullYear()} Amna Khalid. Built with Next.js & TypeScript.
                             </p>
                         </div>
                     </footer>
 
-                    {/* Floating Assistant */}
-                    <AIAssistant />
+                    {/* Main content */}
                 </div>
             </body>
         </html>

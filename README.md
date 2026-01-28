@@ -1,20 +1,39 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Amna Khalid - Professional Portfolio
 
-# Run and deploy your AI Studio app
+A modern, responsive portfolio website showcasing my engineering projects, skills, and experience.
 
-This contains everything you need to run your app locally.
+## Features
+- **Project Showcase**: Detailed view of my engineering and development projects.
+- **Skills & Expertise**: Overview of my technical stack and proficiency levels.
+- **Experience Timeline**: Professional history and key achievements.
+- **Contact System**: Integrated form for professional inquiries.
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+## Tech Stack
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
 
-## Run Locally
+## Getting Started
 
-**Prerequisites:**  Node.js
+### Prerequisites
+- Node.js (Latest LTS recommended)
+- npm or yarn
 
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Amna-Khalid-786/My-Portfolio.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## License
+© 2026 Amna Khalid. All rights reserved.
