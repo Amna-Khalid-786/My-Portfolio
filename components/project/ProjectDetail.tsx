@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { INITIAL_PROJECTS } from '../constants';
-import { Project } from '../types';
+import { INITIAL_PROJECTS } from '@/constants';
+import { Project } from '@/types';
 
 const renderBoldText = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*)/g);

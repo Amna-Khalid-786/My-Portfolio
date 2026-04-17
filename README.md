@@ -1,4 +1,4 @@
-# Amna Khalid - Professional Portfolio
+# Amna Khalid - Portfolio
 
 A modern, responsive portfolio website showcasing my engineering projects, skills, and experience.
 
@@ -33,7 +33,6 @@ A modern, responsive portfolio website showcasing my engineering projects, skill
    ```bash
    npm run dev
    ```
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## License
 © 2026 Amna Khalid. All rights reserved.

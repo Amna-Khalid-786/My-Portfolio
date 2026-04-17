@@ -1,28 +1,35 @@
 {
-  "name": "amna-khalid---portfolio-&-ai-assistant",
+  "name": "portfolio-amna",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--max-old-space-size=4096' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@google/genai": "^1.38.0",
+    "@google/generative-ai": "^0.24.1",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.0",
     "@types/nodemailer": "^7.0.5",
+    "@types/three": "^0.184.0",
     "framer-motion": "^11.0.0",
+    "lucide-react": "^0.563.0",
     "next": "15.1.0",
     "nodemailer": "^7.0.12",
+    "openai": "^6.18.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "three": "^0.184.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.0.0",
+    "cross-env": "^10.1.0",
     "eslint": "^8.0.0",
     "eslint-config-next": "15.1.0",
     "postcss": "^8.0.0",

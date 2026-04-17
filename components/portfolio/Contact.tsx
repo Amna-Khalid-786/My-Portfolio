@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { SOCIAL_LINKS } from '../constants';
+import { SOCIAL_LINKS } from '@/constants';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -49,86 +49,61 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-24 px-6 relative">
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">Let&apos;s <span className="gradient-text">Connect</span></h2>
-              <p className="text-slate-400 text-lg leading-relaxed max-w-md">
-                Interested in working together? My inbox is always open. Send a message and I&apos;ll get back to you!
-              </p>
-            </div>
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-5xl md:text-7xl font-black mb-6 text-white tracking-tighter uppercase">
+            Get In <span className="gradient-text">Touch</span>
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto text-xl font-light leading-relaxed">
+            Let&apos;s discuss your next project or just say hello. My inbox is always open.
+          </p>
+          <div className="h-1.5 w-24 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto mt-8"></div>
+        </motion.div>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col justify-center items-center"
+          >
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="relative group"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative w-full max-w-sm"
             >
-              {/* Magical Glow Background */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 90, 0],
-                  opacity: [0.3, 0.6, 0.3]
-                }}
-                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 bg-gradient-to-tr from-indigo-600/30 to-purple-600/30 blur-[60px] rounded-full"
-              />
-
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 1.15 }}
-                transition={{ type: "spring", stiffness: 100, damping: 20, mass: 1 }}
-                className="relative glass-morphism p-4 rounded-[3rem] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden group"
-              >
+              <div className="relative aspect-square w-full rounded-[3rem] overflow-hidden border border-white/10 bg-black/40 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
                 {/* Highlight Shine Effect */}
                 <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-gradient-to-br from-white/10 via-transparent to-transparent rotate-45 transform pointer-events-none group-hover:translate-x-full duration-1000 transition-transform" />
 
-                <div className="relative aspect-square w-full max-w-sm mx-auto rounded-[2.5rem] overflow-hidden border border-white/5 bg-black/20 shadow-inner">
-                  <Image
-                    src="/assets/connect.jpg"
-                    alt="Connect with me illustration"
-                    fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-110 drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)]"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-              </motion.div>
-
-              {/* Magical Floating Particles (Subtle) */}
-              {[...Array(3)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  animate={{
-                    y: [-20, 20, -20],
-                    x: [-10, 10, -10],
-                    opacity: [0, 1, 0]
-                  }}
-                  transition={{
-                    duration: 4 + i,
-                    repeat: Infinity,
-                    delay: i * 0.5
-                  }}
-                  className={`absolute w-2 h-2 rounded-full bg-indigo-400 blur-sm pointer-events-none`}
-                  style={{
-                    top: `${30 + i * 20}%`,
-                    left: i % 2 === 0 ? '-5%' : '105%'
-                  }}
+                <video
+                  src="/illustration.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-              ))}
+              </div>
+
+              {/* Subtle Ambient Glow */}
+              <div className="absolute -inset-4 bg-indigo-500/10 blur-3xl -z-10 rounded-full" />
             </motion.div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            transition={{ duration: 0.6 }}
             className="p-8 md:p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/10 shadow-2xl relative min-h-[450px] flex flex-col justify-center"
           >
             {status === 'success' ? (
@@ -159,10 +134,7 @@ const Contact: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-1">
-                  <h3 className="text-xl font-bold text-white">Send me a message</h3>
-                  <p className="text-xs text-slate-500">Auto-delivered to amnapersonal4@gmail.com</p>
-                </div>
+
 
                 <div className="space-y-4">
                   <div className="space-y-2">
@@ -207,7 +179,7 @@ const Contact: React.FC = () => {
                   {status === 'submitting' ? (
                     <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   ) : (
-                    "Send Automatically"
+                    "Send"
                   )}
                 </button>
 

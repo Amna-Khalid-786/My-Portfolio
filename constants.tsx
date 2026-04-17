@@ -72,17 +72,20 @@ export const INITIAL_PROJECTS: Project[] = [
 ];
 
 export const SKILLS: Skill[] = [
-  { name: "React / React Native", category: "Frontend" },
   { name: "JavaScript", category: "Frontend" },
+  { name: "React / React Native", category: "Frontend" },
+  { name: "Next.js", category: "Frontend" },
   { name: "HTML / CSS", category: "Frontend" },
   { name: "Flutter", category: "Frontend" },
-  { name: "WordPress", category: "Frontend" },
-  { name: "Figma", category: "Design" },
+  { name: "Figma / Canva", category: "Design" },
   { name: "UI/UX Design", category: "Design" },
+  { name: "Responsive Design", category: "Design" },
+  { name: "CapCut / InShot", category: "Media" },
   { name: "Hailuo AI", category: "Media" },
-  { name: "CapCut", category: "Media" },
-  { name: "InShot", category: "Media" },
-  { name: "Git / GitHub", category: "Tools" }
+  { name: "Git / GitHub", category: "Tools" },
+  { name: "npm / Nodemailer", category: "Tools" },
+  { name: "VS Code", category: "Tools" },
+  { name: "Android Studio", category: "Tools" }
 ];
 
 export const EXPERIENCES: Experience[] = [
@@ -97,6 +100,7 @@ export const EXPERIENCES: Experience[] = [
     company: "Foundation University",
     role: "Information Engineering Technology Student",
     period: "2022 - 2026",
-    description: "Completed 6 semesters of rigorous theoretical coursework followed by intensive industrial training."
+    description: "Completed 6 semesters of rigorous theoretical coursework followed by intensive industrial training.",
+    link: "https://www.fui.edu.pk/"
   }
 ];

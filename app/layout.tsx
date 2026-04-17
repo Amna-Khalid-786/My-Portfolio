@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/Navigation";
-import { SOCIAL_LINKS } from "@/constants";
+import Navigation from "@/components/layout/Navigation";
+import PortfolioBot from "@/components/bot/PortfolioBot";
+import Footer from "@/components/layout/Footer";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Amna Khalid | Portfolio",
     description: "Professional portfolio of Amna Khalid, showcasing engineering projects and skills.",
+    icons: {
+        icon: '/assets/logo.png',
+    },
 };
 
 export default function RootLayout({
@@ -32,21 +37,10 @@ export default function RootLayout({
                         {children}
                     </main>
 
-                    <footer className="py-12 border-t border-white/5 bg-black/40 text-center">
-                        <div className="max-w-6xl mx-auto px-6">
-                            <div className="text-2xl font-bold gradient-text mb-4">Amna Khalid</div>
-                            <div className="flex justify-center gap-6 mb-8 text-slate-400">
-                                <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
-                                <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
-                                <a href="https://rmt-usa.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">RMT USA</a>
-                            </div>
-                            <p className="text-sm text-slate-500">
-                                © {new Date().getFullYear()} Amna Khalid. Built with Next.js & TypeScript.
-                            </p>
-                        </div>
-                    </footer>
+                    <Footer />
 
                     {/* Main content */}
+                    <PortfolioBot />
                 </div>
             </body>
         </html>

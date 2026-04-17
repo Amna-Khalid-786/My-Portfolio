@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { INITIAL_PROJECTS } from '../constants';
+import { INITIAL_PROJECTS } from '@/constants';
 
 const TiltCard = ({ children, className }: { children: React.ReactNode, className: string }) => {
   const x = useMotionValue(0);
@@ -37,9 +37,9 @@ const TiltCard = ({ children, className }: { children: React.ReactNode, classNam
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateY, rotateX, transformStyle: "preserve-3d" }}
-      className={className}
+      className={`${className} h-full`}
     >
-      <div style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }}>
+      <div style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }} className="h-full flex flex-col">
         {children}
       </div>
     </motion.div>
@@ -51,21 +51,20 @@ const Projects: React.FC = () => {
     <section id="projects" className="py-20 px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+          className="text-center mb-20"
         >
-          <div>
-            <h2 className="text-4xl font-bold mb-4 text-white">
-              Featured Work
-            </h2>
-            <div className="w-20 h-1 bg-indigo-500 mb-6 rounded-full"></div>
-            <p className="text-slate-400 w-full whitespace-nowrap overflow-hidden text-ellipsis">
-              A collection of projects where I applied my engineering background to create functional, beautiful digital experiences.
-            </p>
-          </div>
+          <h2 className="text-5xl md:text-7xl font-black mb-6 text-white tracking-tighter uppercase">
+            My <span className="gradient-text">Projects</span>
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto text-xl font-light leading-relaxed">
+            A showcase of digital solutions where engineering meets creative design.
+          </p>
+          <div className="h-1.5 w-24 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto mt-8"></div>
         </motion.div>
+
 
         {INITIAL_PROJECTS.length === 0 ? (
           <div className="text-center py-20 glass rounded-3xl border border-dashed border-white/10">
@@ -74,20 +73,20 @@ const Projects: React.FC = () => {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 perspective-1000">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 perspective-1000">
             <AnimatePresence mode="popLayout">
               {INITIAL_PROJECTS.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+                  transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
                   layout
                 >
-                  <TiltCard className="group glass-morphism rounded-3xl overflow-hidden border border-white/5 hover:border-indigo-500/30 transition-colors duration-500">
-                    <Link href={`/projects/${project.id}`} className="block">
-                      <div className="relative h-72 overflow-hidden">
+                  <TiltCard className="group glass-morphism rounded-3xl overflow-hidden border border-white/5 hover:border-indigo-500/30 transition-colors duration-500 h-full">
+                    <Link href={`/projects/${project.id}`} className="flex flex-col h-full">
+                      <div className="relative h-72 overflow-hidden flex-shrink-0">
                         <Image
                           src={project.image}
                           alt={project.title}
@@ -102,7 +101,7 @@ const Projects: React.FC = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="p-8">
+                      <div className="p-8 flex flex-col flex-grow">
                         <div className="flex flex-wrap gap-2 mb-4">
                           {project.tags.map(tag => (
                             <span key={tag} className="text-[10px] font-bold uppercase tracking-tighter text-indigo-300 bg-indigo-500/10 px-2 py-1 rounded-md border border-indigo-500/20">
@@ -111,7 +110,7 @@ const Projects: React.FC = () => {
                           ))}
                         </div>
                         <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-indigo-400 transition-colors">{project.title}</h3>
-                        <p className="text-slate-400 text-sm leading-relaxed line-clamp-2 font-light">{project.description}</p>
+                        <p className="text-slate-400 text-sm leading-relaxed line-clamp-2 font-light flex-grow">{project.description}</p>
                       </div>
                     </Link>
                   </TiltCard>
