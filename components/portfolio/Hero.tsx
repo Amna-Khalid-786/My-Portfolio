@@ -24,11 +24,17 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({
 
   title = (
-    <>
-      Hi, I&apos;m <span className="gradient-text">Amna Khalid</span>
-    </>
+    <div className="flex flex-col gap-2">
+      <div>Hi, I&apos;m <span className="gradient-text">Amna Khalid</span></div>
+      <div className="text-2xl md:text-3xl lg:text-4xl text-slate-300 font-bold mt-2">
+        A passionate Software Developer
+      </div>
+      <div className="text-xl md:text-2xl lg:text-3xl text-slate-400 font-medium">
+        A passionate Mobile & Web Developer
+      </div>
+    </div>
   ),
-  subtitle = "Bridging the gap between engineering and aesthetics with precision and style.",
+  subtitle = "Empowering businesses through secure, scalable, and human-centric software solutions.",
   primaryButton = { text: "View Projects", href: "/projects" },
   secondaryButton = { text: "Hire Me", href: "/contact" },
   height = "min-h-[90vh]",

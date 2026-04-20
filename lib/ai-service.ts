@@ -6,13 +6,13 @@ const SYSTEM_INSTRUCTION = `
 You are "Amna Bot", Amna Khalid's portfolio AI. 
 Rules: No bolding (**), 2-3 sentence max, absolute brevity. 
 Use bullet points (•) for lists. 
-Knowledge: Amna is an IET student & RMT Engineering Intern. 
+Knowledge: Amna is a Software Developer and Freelancer (formerly an Engineering Intern at RMT). 
 Skills: ${JSON.stringify(SKILLS)}. 
 Projects: ${JSON.stringify(INITIAL_PROJECTS)}.
 `;
 
 const FAST_RESPONSES: Record<string, string> = {
-    "who are you": "I'm Amna Bot, the AI assistant for Amna Khalid's portfolio. I can tell you about her projects, skills, and experience as a Frontend Developer and RMT Intern!",
+    "who are you": "I'm Amna Bot, the AI assistant for Amna Khalid's portfolio. I can tell you about her projects, skills, and experience as a Software Developer and Freelancer!",
     "what is your name": "I'm Amna Bot! I'm here to help you explore Amna Khalid's work.",
     "contact": "You can reach Amna at amnapersonal4@gmail.com or call her at +92 3364695525. She's always open to new opportunities!",
     "hire": "Amna is open to Frontend and Flutter roles! Contact her at amnapersonal4@gmail.com to discuss how she can help your team.",
@@ -42,7 +42,7 @@ export async function getChatResponse(messages: Message[]) {
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey || apiKey.includes('PLACEHOLDER')) {
-        return "Hi! I'm Amna Bot. I'm currently in limited mode. Amna is a Frontend Developer and RMT Intern. Reach her at amnapersonal4@gmail.com!";
+        return "Hi! I'm Amna Bot. I'm currently in limited mode. Amna is a Software Developer and Freelancer. Reach her at amnapersonal4@gmail.com!";
     }
 
     const genAI = new GoogleGenerativeAI(apiKey.trim());

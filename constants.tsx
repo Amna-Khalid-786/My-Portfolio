@@ -90,17 +90,24 @@ export const SKILLS: Skill[] = [
 
 export const EXPERIENCES: Experience[] = [
   {
+    company: "Freelance",
+    role: "Software Developer",
+    period: "Present",
+    description: "Currently working on independent projects and freelance opportunities, specializing in mobile and web development with a focus on creating secure, scalable, and human-centric software solutions.",
+    link: ""
+  },
+  {
     company: "Revive Medical Technologies Inc.",
-    role: "Engineering Intern (Semester 7 & 8)",
-    period: "2025 - Present",
-    description: "Developing and optimizing frontend components for medical technology solutions. Collaborating with cross-functional teams to bridge engineering and UI/UX.",
+    role: "Software Engineering Intern",
+    period: "1 Year Internship",
+    description: "Applied engineering principles to real-world healthcare solutions. Developed medical-grade software modules for patient monitoring and hospital workflows.",
     link: "https://rmt-usa.com/"
   },
   {
     company: "Foundation University",
-    role: "Information Engineering Technology Student",
+    role: "Information Engineering Technology",
     period: "2022 - 2026",
-    description: "Completed 6 semesters of rigorous theoretical coursework followed by intensive industrial training.",
+    description: "Bridged theoretical academic excellence with practical industrial applications, graduating with a strong foundation in software engineering and systems design.",
     link: "https://www.fui.edu.pk/"
   }
 ];

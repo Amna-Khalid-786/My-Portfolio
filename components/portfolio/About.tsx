@@ -56,13 +56,13 @@ const About: React.FC = () => {
           >
             <div className="space-y-6 text-slate-400 leading-relaxed text-lg">
               <p>
-                I am currently pursuing a degree in <span className="text-white font-medium">Information Engineering Technology</span> at Foundation University. My academic journey has been a blend of theoretical depth and hands-on industrial applications.
+                I am a <span className="text-white font-medium">Fresh Graduate Student</span> in <span className="text-white font-medium">Information Engineering Technology</span> from Foundation University. My academic journey has been a blend of theoretical depth and hands-on industrial applications.
               </p>
               <p>
-                With 6 semesters of comprehensive coursework behind me, I am now navigating my professional phase. During my 7th semester, I completed a pivotal internship at <a href="https://rmt-usa.com/" className="text-indigo-400 hover:underline">Revive Medical Technologies Inc.</a>, where I applied engineering principles to real-world healthcare solutions.
+                With 6 semesters of comprehensive coursework behind me, I am now navigating my professional phase. In the 7th and 8th semesters, I completed a 1 year internship at <a href="https://rmt-usa.com/" className="text-indigo-400 hover:underline">Revive Medical Technologies Inc.</a>, where I applied engineering principles to real-world healthcare solutions.
               </p>
               <p>
-                Currently, I am in my <span className="text-white font-medium">8th semester</span>, continuing my journey at RMT. My goal is to build secure, scalable, and human-centric software.
+                Currently, I am working as a freelance developer, focusing on building secure, scalable, and human-centric software. I am actively developing my own projects to further enhance my technical expertise and deliver innovative digital solutions.
               </p>
             </div>
 

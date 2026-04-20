@@ -21,7 +21,7 @@ export default function Home() {
                         <div className="flex flex-col gap-2">
                             <span className="whitespace-nowrap">Hi, I&apos;m <span className="gradient-text">Amna Khalid</span></span>
                             <span className="text-2xl md:text-3xl text-slate-300 font-normal whitespace-nowrap">
-                                A passionate <span className="text-indigo-400 font-bold"><Typewriter words={["Software Developer", "Web & Mobile Applications"]} /></span>
+                                A passionate <span className="text-indigo-400 font-bold"><Typewriter words={["Software Developer", "Mobile & Web Developer"]} /></span>
                             </span>
                         </div>
                     }

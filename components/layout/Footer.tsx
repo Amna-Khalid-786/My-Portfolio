@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className="md:col-span-2">
                     <Link href="/" className="text-3xl font-bold gradient-text mb-6 inline-block">Amna Khalid</Link>
                     <p className="text-slate-400 max-w-sm leading-relaxed mb-6">
-                        Information Engineering Technology student passionate about building secure, scalable, and human-centric software solutions.
+                        Fresh Graduate Student in Information Engineering Technology passionate about building secure, scalable, and human-centric software solutions.
                     </p>
                     <div className="flex gap-4">
                         <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-indigo-600 transition-all hover:scale-110">
