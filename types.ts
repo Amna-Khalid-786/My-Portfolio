@@ -5,8 +5,11 @@ export interface Project {
   description: string;
   image: string;
   tags: string[];
-  link?: string;
   githubLink?: string;
+  vercelLink?: string;
+  figmaLink?: string;
+  canvaLink?: string;
+  isPrivate?: boolean;
   documentation?: string;
   screenshots?: string[];
 }

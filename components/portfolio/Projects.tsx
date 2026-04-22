@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { Github, ExternalLink, Figma, Palette, Globe, Lock } from 'lucide-react';
 import { INITIAL_PROJECTS } from '@/constants';
 
 const TiltCard = ({ children, className }: { children: React.ReactNode, className: string }) => {
@@ -85,7 +86,7 @@ const Projects: React.FC = () => {
                   layout
                 >
                   <TiltCard className="group glass-morphism rounded-3xl overflow-hidden border border-white/5 hover:border-indigo-500/30 transition-colors duration-500 h-full">
-                    <Link href={`/projects/${project.id}`} className="flex flex-col h-full">
+                    <div className="flex flex-col h-full relative">
                       <div className="relative h-72 overflow-hidden flex-shrink-0">
                         <Image
                           src={project.image}
@@ -95,10 +96,57 @@ const Projects: React.FC = () => {
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-transparent opacity-60" />
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="px-6 py-2 bg-indigo-600 text-white font-bold rounded-full text-sm shadow-2xl">
-                            Explore Project
-                          </div>
+                        
+                        {/* Hover Overlay Icons */}
+                        <div className="absolute inset-0 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm">
+                          {project.isPrivate && (
+                            <div 
+                              className="p-3 bg-red-500/10 hover:bg-red-500/20 rounded-full transition-colors border border-red-500/20 group/icon flex items-center justify-center cursor-help"
+                              title="Private Repository"
+                            >
+                              <Lock className="w-6 h-6 text-red-400 group-hover/icon:scale-110 transition-transform" />
+                            </div>
+                          )}
+                          {project.githubLink && (
+                            <Link 
+                              href={project.githubLink} 
+                              target="_blank" 
+                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon"
+                              title="View GitHub Repository"
+                            >
+                              <Github className="w-6 h-6 text-white group-hover/icon:scale-110 transition-transform" />
+                            </Link>
+                          )}
+                          {project.vercelLink && (
+                            <Link 
+                              href={project.vercelLink} 
+                              target="_blank" 
+                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon"
+                              title="View Live Site"
+                            >
+                              <Globe className="w-6 h-6 text-white group-hover/icon:scale-110 transition-transform" />
+                            </Link>
+                          )}
+                          {project.figmaLink && (
+                            <Link 
+                              href={project.figmaLink} 
+                              target="_blank" 
+                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon"
+                              title="View Figma Design"
+                            >
+                              <Figma className="w-6 h-6 text-white group-hover/icon:scale-110 transition-transform" />
+                            </Link>
+                          )}
+                          {project.canvaLink && (
+                            <Link 
+                              href={project.canvaLink} 
+                              target="_blank" 
+                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon"
+                              title="View Canva Design"
+                            >
+                              <Palette className="w-6 h-6 text-white group-hover/icon:scale-110 transition-transform" />
+                            </Link>
+                          )}
                         </div>
                       </div>
                       <div className="p-8 flex flex-col flex-grow">
@@ -112,7 +160,7 @@ const Projects: React.FC = () => {
                         <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-indigo-400 transition-colors">{project.title}</h3>
                         <p className="text-slate-400 text-sm leading-relaxed line-clamp-2 font-light flex-grow">{project.description}</p>
                       </div>
-                    </Link>
+                    </div>
                   </TiltCard>
                 </motion.div>
               ))}
