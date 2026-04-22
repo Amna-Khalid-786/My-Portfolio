@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { SOCIAL_LINKS } from '@/constants';
+import { Mail, Phone, Linkedin, Github } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -49,6 +49,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-24 px-6 relative">
       <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,47 +66,87 @@ const Contact: React.FC = () => {
           <div className="h-1.5 w-24 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto mt-8"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col justify-center items-center"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative w-full max-w-sm"
-            >
-              <div className="relative aspect-square w-full rounded-[3rem] overflow-hidden border border-white/10 bg-black/40 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
-                {/* Highlight Shine Effect */}
-                <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-gradient-to-br from-white/10 via-transparent to-transparent rotate-45 transform pointer-events-none group-hover:translate-x-full duration-1000 transition-transform" />
+        {/* Two-Sided Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+          transition={{ duration: 0.7 }}
+          className="rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)] grid grid-cols-1 md:grid-cols-5"
+        >
+          {/* Left Card — Contact Info */}
+          <div className="md:col-span-2 bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800 p-10 md:p-12 flex flex-col justify-between relative overflow-hidden">
+            {/* Decorative Circles */}
+            <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-white/[0.07]" />
+            <div className="absolute -bottom-20 -left-20 w-56 h-56 rounded-full bg-white/[0.05]" />
+            <div className="absolute top-1/2 right-0 w-32 h-32 rounded-full bg-white/[0.04] translate-x-1/2 -translate-y-1/2" />
 
-                <video
-                  src="/illustration.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                />
+            <div className="relative z-10">
+              <h3 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">
+                Contact
+              </h3>
+              <p className="text-white/70 text-sm leading-relaxed mb-12">
+                Feel free to reach out through any of these channels. I&apos;d love to hear from you!
+              </p>
+
+              <div className="space-y-8">
+                {/* Email */}
+                <a
+                  href={`mailto:${SOCIAL_LINKS.email}`}
+                  className="flex items-start gap-4 group"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
+                    <Mail className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold text-white/50 uppercase tracking-widest mb-1">Email</p>
+                    <p className="text-white font-semibold text-sm group-hover:text-white/80 transition-colors">
+                      {SOCIAL_LINKS.email}
+                    </p>
+                  </div>
+                </a>
+
+                {/* Phone */}
+                <a
+                  href={`tel:${SOCIAL_LINKS.phone}`}
+                  className="flex items-start gap-4 group"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold text-white/50 uppercase tracking-widest mb-1">Phone</p>
+                    <p className="text-white font-semibold text-sm group-hover:text-white/80 transition-colors">
+                      {SOCIAL_LINKS.phone}
+                    </p>
+                  </div>
+                </a>
               </div>
+            </div>
 
-              {/* Subtle Ambient Glow */}
-              <div className="absolute -inset-4 bg-indigo-500/10 blur-3xl -z-10 rounded-full" />
-            </motion.div>
-          </motion.div>
+            {/* Social Links at bottom */}
+            <div className="relative z-10 mt-12 flex items-center gap-3">
+              <a
+                href={SOCIAL_LINKS.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/25 transition-colors"
+              >
+                <Linkedin className="w-4 h-4 text-white" />
+              </a>
+              <a
+                href={SOCIAL_LINKS.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/25 transition-colors"
+              >
+                <Github className="w-4 h-4 text-white" />
+              </a>
+            </div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-            transition={{ duration: 0.6 }}
-            className="p-8 md:p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/10 shadow-2xl relative min-h-[450px] flex flex-col justify-center"
-          >
+          {/* Right Card — Form */}
+          <div className="md:col-span-3 bg-white/[0.03] backdrop-blur-sm p-10 md:p-12 flex flex-col justify-center">
             {status === 'success' ? (
               <div className="py-6 flex flex-col items-center text-center">
                 <div className="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mb-6 border border-green-500/20">
@@ -134,7 +175,10 @@ const Contact: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-black text-white mb-1 tracking-tight">Get in Touch</h3>
+                  <p className="text-slate-500 text-sm">Feel free to drop us a line below!</p>
+                </div>
 
                 <div className="space-y-4">
                   <div className="space-y-2">
@@ -174,7 +218,7 @@ const Contact: React.FC = () => {
 
                 <button
                   disabled={status === 'submitting'}
-                  className="w-full py-5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-2xl transition-all shadow-xl disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="w-full py-5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-2xl transition-all shadow-xl disabled:opacity-50 flex items-center justify-center gap-2 uppercase tracking-widest text-sm"
                 >
                   {status === 'submitting' ? (
                     <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -188,8 +232,8 @@ const Contact: React.FC = () => {
                 )}
               </form>
             )}
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
