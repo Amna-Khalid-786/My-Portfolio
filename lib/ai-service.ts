@@ -43,9 +43,9 @@ const FAST_RESPONSES: Record<string, string> = {
     "advanced calculator": "A sophisticated scientific calculator with a modern, responsive UI built with JavaScript.",
     "macrobuddy": "A UI/UX design project in Figma for a nutrition tracker and wellness companion application.",
     "recipe app": "An interactive mobile design for a recipe sharing and cooking social platform designed in Figma.",
-    "medical device design": "Professional product design and 3D visualization for medical instrumentation using Canva.",
+    "medical device design": "A professional product design project for medical instrumentation. Note: This project is currently private and proprietary.",
     "brochure design": "Creative marketing and branding materials for promotional brochures designed with Canva.",
-    "personal portfolio": "This very site! A high-performance portfolio with 3D animations, Next.js, and Framer Motion.",
+    "personal portfolio": "This very site! It is live at https://my-portfolio-nu-orcin-87.vercel.app/ and features 3D animations and Next.js.",
     "build": "Amna builds her projects using modern tech like React, Next.js, and Flutter, focusing on performance and security.",
     "sorry": "I only know about Amna, her skills, projects, and experience. You can freely ask me about her work!"
 };

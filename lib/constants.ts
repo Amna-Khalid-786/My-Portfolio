@@ -91,7 +91,7 @@ export const INITIAL_PROJECTS: Project[] = [
     description: "Professional product design and visualization for medical instrumentation.",
     image: "/assets/medical-device.jpg",
     tags: ["Canva", "Design", "Medical"],
-    canvaLink: "https://www.canva.com/design/DAHC35r2nIc/U0xkqNEVn45thrJF3tO-Ig/edit"
+    isPrivate: true
   },
   {
     id: 11,
@@ -107,7 +107,8 @@ export const INITIAL_PROJECTS: Project[] = [
     description: "A modern, high-performance developer portfolio featuring 3D animations and dynamic interactions.",
     image: "/assets/my-portfolio.jpg",
     tags: ["Next.js", "Three.js", "Framer Motion"],
-    githubLink: "https://github.com/Amna-Khalid-786/My-Portfolio"
+    githubLink: "https://github.com/Amna-Khalid-786/My-Portfolio",
+    vercelLink: "https://my-portfolio-nu-orcin-87.vercel.app/"
   }
 ];
 
