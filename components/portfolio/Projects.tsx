@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Github, ExternalLink, Figma, Palette, Globe, Lock } from 'lucide-react';
+import { Github, Figma, Palette, Globe, Lock } from 'lucide-react';
 import { INITIAL_PROJECTS } from '@/lib/constants';
 
 const TiltCard = ({ children, className }: { children: React.ReactNode, className: string }) => {

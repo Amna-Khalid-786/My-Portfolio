@@ -53,8 +53,9 @@ const FAST_RESPONSES: Record<string, string> = {
 async function retry<T>(fn: () => Promise<T>, retries = 2, delay = 1000): Promise<T> {
     try {
         return await fn();
-    } catch (err: any) {
-        if (retries > 0 && (err?.status === 503 || err?.message?.includes('503'))) {
+    } catch (err: unknown) {
+        const error = err as { status?: number; message?: string };
+        if (retries > 0 && (error?.status === 503 || error?.message?.includes('503'))) {
             await new Promise(resolve => setTimeout(resolve, delay));
             return retry(fn, retries - 1, delay * 2);
         }
@@ -112,9 +113,10 @@ export async function getChatResponse(messages: Message[]) {
 
     try {
         return await retry(() => executeAiAction(PRIMARY_MODEL));
-    } catch (err: any) {
+    } catch (err: unknown) {
+        const error = err as { status?: number; message?: string };
         // Silently handle errors to keep terminal clean
-        if (err?.status === 429 || err?.message?.includes('quota')) {
+        if (error?.status === 429 || error?.message?.includes('quota')) {
             throw new Error("QUOTA_EXCEEDED");
         }
         
