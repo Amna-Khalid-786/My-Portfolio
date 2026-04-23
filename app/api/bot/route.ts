@@ -11,7 +11,6 @@ export async function POST(req: NextRequest) {
 
     } catch (err: unknown) {
         const error = err as { message?: string; status?: number };
-        console.error("Bot API Route Error:", error);
 
         if (error?.message === "QUOTA_EXCEEDED") {
             return NextResponse.json({
