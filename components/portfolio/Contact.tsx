@@ -20,25 +20,27 @@ const Contact: React.FC = () => {
     setStatus('submitting');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formState),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '794a4efb-cef0-4783-9d1a-3d1aeda0e702',
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+          subject: `New Message from ${formState.name} (Portfolio)`,
+        }),
       });
 
-      // Handle non-JSON or error responses gracefully
-      const contentType = response.headers.get("content-type");
-      if (contentType && contentType.indexOf("application/json") !== -1) {
-        const data = await response.json();
-        if (data.success) {
-          setStatus('success');
-        } else {
-          throw new Error(data.error || "Delivery failed on server.");
-        }
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus('success');
       } else {
-        const text = await response.text();
-        console.error("Non-JSON response from server:", text);
-        throw new Error("Server error (Unexpected response format).");
+        throw new Error(data.message || "Delivery failed.");
       }
     } catch (error) {
       console.error("Contact Form Submission Error:", error);
@@ -177,7 +179,7 @@ const Contact: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-black text-white mb-1 tracking-tight">Get in Touch</h3>
-                  <p className="text-slate-500 text-sm">Feel free to drop us a line below!</p>
+                  <p className="text-slate-500 text-sm">Feel free to drop me a line below!</p>
                 </div>
 
                 <div className="space-y-4">
