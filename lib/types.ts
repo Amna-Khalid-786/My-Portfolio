@@ -12,6 +12,7 @@ export interface Project {
   isPrivate?: boolean;
   documentation?: string;
   screenshots?: string[];
+  link?: string;
 }
 
 export interface Skill {

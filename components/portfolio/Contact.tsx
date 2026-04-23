@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { SOCIAL_LINKS } from '@/constants';
+import { SOCIAL_LINKS } from '@/lib/constants';
 import { Mail, Phone, Linkedin, Github } from 'lucide-react';
 
 const Contact: React.FC = () => {
@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
           'Accept': 'application/json',
         },
         body: JSON.stringify({
-          access_key: '794a4efb-cef0-4783-9d1a-3d1aeda0e702',
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
           name: formState.name,
           email: formState.email,
           message: formState.message,

@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { SKILLS, INITIAL_PROJECTS } from "@/constants";
-import { Message } from "@/types";
+import { SKILLS, INITIAL_PROJECTS } from "@/lib/constants";
+import { Message } from "@/lib/types";
 
 const SYSTEM_INSTRUCTION = `
 You are "Amna Bot", Amna Khalid's portfolio AI. 

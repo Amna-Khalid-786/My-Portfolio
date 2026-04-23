@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Message } from '@/types';
+import { Message } from '@/lib/types';
 import { Bot, Send, X, MessageSquare, Sparkles } from 'lucide-react';
 
 const PortfolioBot = () => {

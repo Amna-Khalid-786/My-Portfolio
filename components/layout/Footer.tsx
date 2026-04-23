@@ -1,5 +1,5 @@
 import React from 'react';
-import { SOCIAL_LINKS } from '@/constants';
+import { SOCIAL_LINKS } from '@/lib/constants';
 import Link from 'next/link';
 
 const Footer = () => {
