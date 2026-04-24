@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({
     <div className="flex flex-col gap-2">
       <div>Hi, I&apos;m <span className="gradient-text">Amna Khalid</span></div>
       <div className="text-2xl md:text-3xl lg:text-4xl text-slate-300 font-bold mt-2">
-        A passionate Software Developer
+        A passionate Software Engineer
       </div>
       <div className="text-xl md:text-2xl lg:text-3xl text-slate-400 font-medium">
         A passionate Mobile & Web Developer
