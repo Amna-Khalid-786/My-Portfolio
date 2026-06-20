@@ -30,11 +30,11 @@ const Hero: React.FC<HeroProps> = ({
         A passionate Software Engineer
       </div>
       <div className="text-xl md:text-2xl lg:text-3xl text-slate-400 font-medium">
-        A passionate Mobile & Web Developer
+        A passionate Web & Mobile Applications Developer
       </div>
     </div>
   ),
-  subtitle = "Empowering businesses through secure, scalable, and human-centric software solutions.",
+  subtitle = "Building secure, scalable, and AI-powered digital solutions that create real business impact.",
   primaryButton = { text: "View Projects", href: "/projects" },
   secondaryButton = { text: "Hire Me", href: "/contact" },
   height = "min-h-[90vh]",

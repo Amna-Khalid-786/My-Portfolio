@@ -55,7 +55,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5 h-20 flex items-center">
+    <nav className="fixed top-0 left-0 right-0 z-[100] bg-[#0a0a0c]/90 backdrop-blur-md border-b border-white/5 h-20 flex items-center">
       <div className="max-w-6xl mx-auto px-6 w-full flex items-center justify-between">
         <Link
           href="#home"

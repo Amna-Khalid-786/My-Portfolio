@@ -20,6 +20,18 @@ const scrollingSkills = [
   { name: "npm", logo: "/skills-logos/npm.svg", color: "#CB3837" },
   { name: "VS Code", logo: "/skills-logos/vscode.svg", color: "#007ACC" },
   { name: "Android", logo: "/skills-logos/android.svg", color: "#3DDC84" },
+  { name: "AWS S3", logo: "/skills-logos/aws.svg", color: "#569A31" },
+  { name: "Neon", logo: "https://cdn.simpleicons.org/neon/white", color: "#00E599" },
+  { name: "Resend", logo: "https://cdn.simpleicons.org/resend/white", color: "#FFFFFF" },
+  { name: "Brevo", logo: "https://cdn.simpleicons.org/brevo/white", color: "#0092FF" },
+  { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/white", color: "#4169E1" },
+  { name: "C++", logo: "https://cdn.simpleicons.org/cplusplus/white", color: "#00599C" },
+  { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/white", color: "#3178C6" },
+  { name: "Dart", logo: "https://cdn.simpleicons.org/dart/white", color: "#0175C2" },
+  { name: "WordPress", logo: "https://cdn.simpleicons.org/wordpress/white", color: "#21759B" },
+  { name: "Tailwind CSS", logo: "https://cdn.simpleicons.org/tailwindcss/white", color: "#38B2AC" },
+  { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb/white", color: "#4EA94B" },
+  { name: "Vite", logo: "https://cdn.simpleicons.org/vite/white", color: "#646CFF" },
 ];
 
 const Skills: React.FC = () => {
@@ -89,7 +101,7 @@ const Skills: React.FC = () => {
 
                       {/* Logo Icon - Uniform Inner Size */}
                       <div className="w-12 h-12 flex items-center justify-center relative z-20">
-                        <Image
+                        <img
                           src={skill.logo}
                           alt={skill.name}
                           width={48}
@@ -112,6 +124,102 @@ const Skills: React.FC = () => {
                     {skill.name}
                   </span>
                 </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Technical Stack Static Chart */}
+          <div className="mt-32 max-w-5xl mx-auto pb-10">
+            <h3 className="text-4xl md:text-5xl font-black text-center mb-16 text-white tracking-tighter uppercase">
+              Technical <span className="gradient-text">Stack</span>
+            </h3>
+            
+            <div className="space-y-16">
+              {[
+                {
+                  title: "Programming Languages",
+                  skills: [
+                    { name: "JavaScript", logo: "/skills-logos/javascript.svg", color: "#F7DF1E" },
+                    { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/white", color: "#3178C6" },
+                    { name: "Dart", logo: "https://cdn.simpleicons.org/dart/white", color: "#0175C2" },
+                    { name: "C++", logo: "https://cdn.simpleicons.org/cplusplus/white", color: "#00599C" },
+                    { name: "HTML5", logo: "/skills-logos/html.svg", color: "#E34F26" },
+                    { name: "CSS3", logo: "/skills-logos/css.svg", color: "#1572B6" }
+                  ]
+                },
+                {
+                  title: "Frameworks, Libraries & CMS",
+                  skills: [
+                    { name: "React", logo: "/skills-logos/react.svg", color: "#61DAFB" },
+                    { name: "Next.js", logo: "/skills-logos/nextjs.svg", color: "#FFFFFF" },
+                    { name: "Flutter", logo: "/skills-logos/flutter.svg", color: "#02569B" },
+                    { name: "React Native", logo: "/skills-logos/reactnative.png", color: "#61DAFB" },
+                    { name: "WordPress", logo: "https://cdn.simpleicons.org/wordpress/white", color: "#21759B" },
+                    { name: "Tailwind CSS", logo: "https://cdn.simpleicons.org/tailwindcss/white", color: "#38B2AC" }
+                  ]
+                },
+                {
+                  title: "UI/UX & Design Tools",
+                  skills: [
+                    { name: "Figma", logo: "/skills-logos/figma.svg", color: "#F24E1E" },
+                    { name: "Canva", logo: "/skills-logos/canva.svg", color: "#00C4CC" },
+                    { name: "UI/UX", logo: "/skills-logos/uiux.svg", color: "#FF61F6" },
+                    { name: "Responsive", logo: "/skills-logos/responsive.png", color: "#3DDC84" }
+                  ]
+                },
+                {
+                  title: "Databases, Cloud & Services",
+                  skills: [
+                    { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/white", color: "#4169E1" },
+                    { name: "AWS S3", logo: "/skills-logos/aws.svg", color: "#569A31" },
+                    { name: "Neon", logo: "https://cdn.simpleicons.org/neon/white", color: "#00E599" },
+                    { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb/white", color: "#4EA94B" },
+                    { name: "Resend", logo: "https://cdn.simpleicons.org/resend/white", color: "#FFFFFF" },
+                    { name: "Brevo", logo: "https://cdn.simpleicons.org/brevo/white", color: "#0092FF" },
+                    { name: "Nodemailer", logo: "/skills-logos/nodemailer.png", color: "#3399CC" }
+                  ]
+                },
+                {
+                  title: "Developer Ecosystem",
+                  skills: [
+                    { name: "Git", logo: "/skills-logos/git.svg", color: "#F05032" },
+                    { name: "GitHub", logo: "/skills-logos/github.svg", color: "#FFFFFF" },
+                    { name: "VS Code", logo: "/skills-logos/vscode.svg", color: "#007ACC" },
+                    { name: "npm", logo: "/skills-logos/npm.svg", color: "#CB3837" },
+                    { name: "Vite", logo: "https://cdn.simpleicons.org/vite/white", color: "#646CFF" },
+                    { name: "Android", logo: "/skills-logos/android.svg", color: "#3DDC84" }
+                  ]
+                }
+              ].map((category, idx) => (
+                <div key={idx} className="flex flex-col items-center">
+                  <h4 className="text-2xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 mb-8 tracking-wide">
+                    {category.title}
+                  </h4>
+                  <div className="flex flex-wrap justify-center gap-4 md:gap-6 w-full">
+                    {category.skills.map((skill, sIdx) => (
+                      <div 
+                        key={sIdx} 
+                        className="glass px-6 py-4 rounded-2xl flex items-center gap-4 hover:scale-110 hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-white/5 hover:border-indigo-500/30"
+                        style={{ boxShadow: `0 4px 20px -5px ${skill.color}15` }}
+                      >
+                        <div className="w-8 h-8 flex items-center justify-center relative">
+                          <div 
+                            className="absolute inset-0 rounded-full blur-md group-hover:opacity-100 opacity-0 transition-opacity duration-300"
+                            style={{ backgroundColor: skill.color }}
+                          ></div>
+                          <img 
+                            src={skill.logo} 
+                            alt={skill.name} 
+                            className="w-full h-full object-contain relative z-10 group-hover:brightness-125 transition-all" 
+                          />
+                        </div>
+                        <span className="text-slate-300 font-bold tracking-wider text-sm group-hover:text-white transition-colors uppercase">
+                          {skill.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>

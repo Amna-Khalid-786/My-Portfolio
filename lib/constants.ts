@@ -10,6 +10,16 @@ export const SOCIAL_LINKS = {
 
 export const INITIAL_PROJECTS: Project[] = [
   {
+    id: 13,
+    title: "BlueWorld City",
+    description: "An AI-powered real estate and property management platform for Blue World City.",
+    image: "/assets/blueworld.jpg",
+    tags: ["Next.js", "AI", "Real Estate"],
+    vercelLink: "https://blueworldcity.ai/",
+    githubLink: "https://github.com/Amna-Khalid-786/blueworld-city",
+    isPrivate: true
+  },
+  {
     id: 1,
     title: "SK Associates",
     description: "A comprehensive professional platform showcasing services and portfolio for SK Associates.",

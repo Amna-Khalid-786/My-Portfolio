@@ -107,11 +107,11 @@ const Projects: React.FC = () => {
                               <Lock className="w-6 h-6 text-red-400 group-hover/icon:scale-110 transition-transform" />
                             </div>
                           )}
-                          {project.githubLink && (
+                          {!project.isPrivate && project.githubLink && (
                             <Link 
                               href={project.githubLink} 
                               target="_blank" 
-                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon"
+                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon flex items-center justify-center"
                               title="View GitHub Repository"
                             >
                               <Github className="w-6 h-6 text-white group-hover/icon:scale-110 transition-transform" />
@@ -121,7 +121,7 @@ const Projects: React.FC = () => {
                             <Link 
                               href={project.vercelLink} 
                               target="_blank" 
-                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon"
+                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon flex items-center justify-center"
                               title="View Live Site"
                             >
                               <Globe className="w-6 h-6 text-white group-hover/icon:scale-110 transition-transform" />
@@ -131,7 +131,7 @@ const Projects: React.FC = () => {
                             <Link 
                               href={project.figmaLink} 
                               target="_blank" 
-                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon"
+                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon flex items-center justify-center"
                               title="View Figma Design"
                             >
                               <Figma className="w-6 h-6 text-white group-hover/icon:scale-110 transition-transform" />
@@ -141,7 +141,7 @@ const Projects: React.FC = () => {
                             <Link 
                               href={project.canvaLink} 
                               target="_blank" 
-                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon"
+                              className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/20 group/icon flex items-center justify-center"
                               title="View Canva Design"
                             >
                               <Palette className="w-6 h-6 text-white group-hover/icon:scale-110 transition-transform" />
