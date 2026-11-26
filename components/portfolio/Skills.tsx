@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -32,6 +34,11 @@ const scrollingSkills = [
   { name: "Tailwind CSS", logo: "https://cdn.simpleicons.org/tailwindcss/white", color: "#38B2AC" },
   { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb/white", color: "#4EA94B" },
   { name: "Vite", logo: "https://cdn.simpleicons.org/vite/white", color: "#646CFF" },
+  { name: "Docker", logo: "https://cdn.simpleicons.org/docker/white", color: "#2496ED" },
+  { name: "Hostinger", logo: "https://cdn.simpleicons.org/hostinger/white", color: "#673DE6" },
+  { name: "VPS", logo: "https://cdn.simpleicons.org/linode/white", color: "#00A95C" },
+  { name: "Firebase", logo: "https://cdn.simpleicons.org/firebase/white", color: "#FFCA28" },
+  { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/white", color: "#FFFFFF" },
 ];
 
 const Skills: React.FC = () => {

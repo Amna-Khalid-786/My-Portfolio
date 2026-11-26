@@ -10,13 +10,29 @@ export const SOCIAL_LINKS = {
 
 export const INITIAL_PROJECTS: Project[] = [
   {
+    id: 14,
+    title: "Property AI",
+    description: "An intelligent AI-powered property analysis platform featuring smart scanning technology to evaluate real estate investments, generate instant property reports, and deliver AI-driven market insights.",
+    image: "/assets/property-ai.png",
+    tags: ["AI", "Real Estate", "Machine Learning", "Property Tech"],
+    isPrivate: true,
+  },
+  {
+    id: 15,
+    title: "Estate Avenue",
+    description: "A premium real estate marketplace platform connecting buyers, sellers, and agents. Features property listings, smart search filters, virtual tours, and a seamless transaction experience.",
+    image: "/assets/estates-avenue.png",
+    tags: ["Next.js", "Real Estate", "Full-Stack", "Marketplace"],
+    vercelLink: "https://estatesavenue.com/",
+    isPrivate: true,
+  },
+  {
     id: 13,
     title: "BlueWorld City",
     description: "An AI-powered real estate and property management platform for Blue World City.",
     image: "/assets/blueworld.jpg",
     tags: ["Next.js", "AI", "Real Estate"],
     vercelLink: "https://blueworldcity.ai/",
-    githubLink: "https://github.com/Amna-Khalid-786/blueworld-city",
     isPrivate: true
   },
   {
@@ -116,7 +132,7 @@ export const INITIAL_PROJECTS: Project[] = [
     title: "Personal Portfolio",
     description: "A modern, high-performance developer portfolio featuring 3D animations and dynamic interactions.",
     image: "/assets/my-portfolio.jpg",
-    tags: ["Next.js", "Three.js", "Framer Motion"],
+    tags: ["Next.js", "Three.js", "Framer Motion", "AI"],
     githubLink: "https://github.com/Amna-Khalid-786/My-Portfolio",
     vercelLink: "https://my-portfolio-nu-orcin-87.vercel.app/"
   }

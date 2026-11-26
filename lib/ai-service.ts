@@ -33,7 +33,9 @@ const FAST_RESPONSES: Record<string, string> = {
     "tell me about amna": "Amna Khalid is a Software, Mobile, and Web Developer specializing in building secure, scalable, and human-centric software. She is a fresh graduate with experience in Healthcare IT!",
     "about amna": "Amna Khalid is a Software, Mobile, and Web Developer specializing in building secure, scalable, and human-centric software. She is a fresh graduate with experience in Healthcare IT!",
     "poem": "Amna codes with grace and skill, / Building apps with iron will. / From Next.js to Flutter's light, / She makes the digital world bright.",
-    "sk associates": "A comprehensive professional platform for SK Associates built with Next.js and Tailwind CSS, showcasing their services and portfolio.",
+    "property ai": "Property AI is an intelligent AI-powered property analysis platform with smart scanning to evaluate real estate investments, generate instant reports, and deliver market insights.",
+    "blueworld": "BlueWorld City is an AI-powered real estate and property management platform. It's live at https://blueworldcity.ai/",
+    "estate avenue": "Estate Avenue is a premium real estate marketplace connecting buyers, sellers, and agents. It's live at https://estatesavenue.com/",
     "camera based": "A medical imaging application built with React Native for high-quality skin analysis with advanced camera controls.",
     "remote patient": "A real-time health monitoring app built with React Native for tracking vital patient parameters like heart rate and oxygen levels.",
     "devfolio site": "A professional portfolio project for Revive Medical Technologies (RMT) built with Next.js.",
@@ -70,7 +72,8 @@ export async function getChatResponse(messages: Message[]) {
     const sortedKeys = Object.keys(FAST_RESPONSES).sort((a, b) => b.length - a.length);
     
     for (const key of sortedKeys) {
-        if (lastMessage.includes(key)) return FAST_RESPONSES[key];
+        const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        if (new RegExp(`\\b${escaped}\\b`).test(lastMessage)) return FAST_RESPONSES[key];
     }
 
     const apiKey = process.env.GEMINI_API_KEY;
@@ -79,7 +82,7 @@ export async function getChatResponse(messages: Message[]) {
     }
 
     const genAI = new GoogleGenerativeAI(apiKey.trim());
-    const PRIMARY_MODEL = "gemini-1.5-flash";
+    const PRIMARY_MODEL = "gemini-2.5-flash";
 
     // Gemini history MUST start with a 'user' role and alternate.
     let history = messages.slice(0, -1);
