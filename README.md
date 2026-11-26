@@ -1,6 +1,9 @@
-# Amna Khalid - Portfolio
+## Development
 
-A modern, responsive portfolio website showcasing my engineering projects, skills, and experience.
+This repository contains my personal developer portfolio.
+
+I continuously improve the project by refining its design,
+functionality, and user experience.
 
 ## Features
 - **Project Showcase**: Detailed view of my engineering and development projects.
