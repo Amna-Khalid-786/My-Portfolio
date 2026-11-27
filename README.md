@@ -1,9 +1,11 @@
-## Development
+## About This Portfolio
 
-This repository contains my personal developer portfolio.
+This portfolio showcases my software development journey,
+technical skills, selected projects, and experience in
+building modern web and mobile applications.
 
-I continuously improve the project by refining its design,
-functionality, and user experience.
+It highlights my work in frontend development,
+full-stack applications, and AI-powered solutions.
 
 ## Features
 - **Project Showcase**: Detailed view of my engineering and development projects.
